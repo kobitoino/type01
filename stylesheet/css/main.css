@@ -3,6 +3,74 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+  width: 100%;
+  color: #666;
+  background-color: lightblue;
+}
+body h1, body h2, body h3, body h4, body h5, body h6, body h7, body h8 {
+  margin: 0;
+  padding: 0;
+}
+body ul {
+  margin: 0;
+  padding: 0;
+}
+body ul li {
+  margin: 0;
+  padding: 0;
+}
+body p {
+  font-size: 16px;
+}
+
+#headerOuter {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+nav ul {
+  width: 470px;
+  margin: 0 auto;
+}
+nav ul li {
+  display: table-cell;
+  padding: 0 20px;
+}
+
+.kyeImages {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.contents {
+  width: 980px;
+  margin: 20px auto;
+}
+
+.contentBox {
+  box-shadow: 1px 1px 5px #666;
+  width: 100%;
+  margin: 0 auto 40px auto;
+  background-color: #fff;
+}
+.contentBox .contentBoxInner {
+  min-height: 400px;
+}
+.contentBox .contentBoxInner h1 {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #763c36;
+}
+
+footer {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: gray;
+  color: #fff;
 }
 
 /*# sourceMappingURL=main.css.map */
