@@ -5,11 +5,23 @@ body {
   font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
   width: 100%;
   color: #666;
-  background-color: lightblue;
+  background-color: #f7f9f9;
 }
 body h1, body h2, body h3, body h4, body h5, body h6, body h7, body h8 {
   margin: 0;
   padding: 0;
+  font-size: 16px;
+}
+body a {
+  text-decoration: none;
+  color: #666;
+}
+body a:hover {
+  text-decoration: none;
+  color: #ccc;
+}
+body li {
+  text-decoration: none;
 }
 body ul {
   margin: 0;
@@ -24,24 +36,32 @@ body p {
 }
 
 #headerOuter {
-  border: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  box-shadow: 1px 1px 5px #ddd;
   width: 100%;
+  height: 80px;
   margin: 0 auto;
   background-color: #fff;
+  z-index: 1;
 }
 
 nav ul {
-  width: 470px;
+  width: 500px;
   margin: 0 auto;
 }
 nav ul li {
   display: table-cell;
   padding: 0 20px;
+  height: 80px;
+  vertical-align: middle;
 }
 
 .kyeImages {
   width: 100%;
   border: 1px solid #ccc;
+  margin-top: 80px;
+  height: 180px;
 }
 
 .contents {
@@ -50,7 +70,8 @@ nav ul li {
 }
 
 .contentBox {
-  box-shadow: 1px 1px 5px #666;
+  box-shadow: 0px 3px 6px 0px  #ccc;
+  border-radius: 5px;
   width: 100%;
   margin: 0 auto 40px auto;
   background-color: #fff;
@@ -61,16 +82,93 @@ nav ul li {
 .contentBox .contentBoxInner h1 {
   padding: 40px 0;
   text-align: center;
-  background-color: #763c36;
+  background-color: beige;
+  border-radius: 5px 5px 0 0;
 }
 
 footer {
   border: 1px solid #ccc;
   width: 100%;
+  height: 50px;
   margin: 0 auto;
   text-align: center;
-  background-color: gray;
+}
+footer .fotternav {
+  background: #ddd url(../../footer_background3.png) repeat fixed center top;
+  height: 220px;
   color: #fff;
+}
+footer .fotternav ul {
+  width: 870px;
+  margin: 0 auto;
+}
+footer .fotternav ul li {
+  display: table-cell;
+  padding: 0 10px;
+  width: 200px;
+  height: 60px;
+  vertical-align: middle;
+}
+footer p {
+  color: #666;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) and (min-width: 0px) {
+  .contents {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .contentBox {
+    box-shadow: 0px 3px 6px 0px  #ccc;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto 40px auto;
+    background-color: #fff;
+  }
+  .contentBox .contentBoxInner {
+    min-height: 400px;
+  }
+  .contentBox .contentBoxInner h1 {
+    padding: 20px 0;
+    text-align: center;
+    background-color: beige;
+    border-radius: 5px 5px 0 0;
+  }
+
+  footer {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  footer .fotternav {
+    background: #ddd url(../../footer_background3.png) repeat fixed center top;
+    height: 220px;
+    color: #fff;
+  }
+  footer .fotternav ul {
+    width: 100%;
+    margin: 0 auto;
+  }
+  footer .fotternav ul li {
+    display: block;
+    padding: 20px 0;
+    width: 100%;
+    height: 10px;
+    vertical-align: middle;
+    font-size: 10px;
+  }
+  footer p {
+    color: #666;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

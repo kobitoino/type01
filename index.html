@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="stylesheet/css/main.css">
+    <!--「aos」CSSの読込-->
+    <link rel="stylesheet" href="js/aos.css">
+    <!--「aos」JSの読込-->
+    <script src="js/aos.js"></script>
 
     <title>レスポンシブデザインtype01</title>
   </head>
@@ -13,14 +17,13 @@
     <div id="container">
       <div id="headerOuter">
       <header>
-        <h1>レスポンシブデザインtype01</h1>
         <nav>
           <ul>
-            <li>Home</li>
-            <li>Concept</li>
-            <li>Blog</li>
-            <li>Access</li>
-            <li>Contact</li>
+            <a href="#"><li>Home</li></a>
+            <a href="#"><li>Concept</li></a>
+            <a href="#"><li>Blog</li></a>
+            <a href="#"><li>Access</li></a>
+            <a href="#"><li>Contact</li></a>
           </ul>
         </nav>
       </header>
@@ -31,7 +34,7 @@
       </div>
 
       <article class="contents">
-        <div class="contentBox">
+        <div class="contentBox" data-aos="fade-right">
           <section>
             <div class="contentBoxInner">
             <h1>コンテンツのタイトル</h1>
@@ -40,7 +43,7 @@
           </section>
         </div>
 
-        <div class="contentBox">
+        <div class="contentBox" data-aos="fade-left">
           <section>
             <div class="contentBoxInner">
             <h1>コンテンツのタイトル</h1>
@@ -49,7 +52,7 @@
           </section>
         </div>
 
-        <div class="contentBox">
+        <div class="contentBox" data-aos="fade-right">
           <section>
             <div class="contentBoxInner">
             <h1>コンテンツのタイトル</h1>
@@ -57,14 +60,23 @@
           コンテンツの中身が入る
           </section>
         </div>
-        
+
       </article>
-
+  </div>
 
       <footer>
-        copyright all reserved
+      <div class="fotternav">
+        <ul>
+          <li>ご利用規約</li>
+          <li>プライバシーポリシー</li>
+          <li>会社情報</li>
+          <li>サイトマップ</li>
+        </ul>
+      </div>
+        <p class="copyright">copyright all reserved</p>
       </footer>
 
-  </div>
+<script>AOS.init();</script>
+
   </body>
 </html>
