@@ -14,9 +14,9 @@
     <title>レスポンシブデザインtype01</title>
   </head>
   <body>
-    <div id="container">
-      <div id="headerOuter">
+
       <header>
+      <div id="headerOuter">
         <nav>
           <ul>
             <a href="#"><li>Home</li></a>
@@ -26,43 +26,70 @@
             <a href="#"><li>Contact</li></a>
           </ul>
         </nav>
-      </header>
+
+        <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+
+              <ul>
+                <a href="#"><li>Home</li></a>
+                <a href="#"><li>Concept</li></a>
+                <a href="#"><li>Blog</li></a>
+                <a href="#"><li>Access</li></a>
+                <a href="#"><li>Contact</li></a>
+              </ul>
+
+          </div>
+        </div>
       </div>
+      </header>
 
       <div class="kyeImages">
         <h1>キービジュアル</h1>
       </div>
 
       <article class="contents">
-        <div class="contentBox" data-aos="fade-right">
+
+        <div class="contentBox" data-aos="zoom-in">
           <section>
             <div class="contentBoxInner">
             <h1>コンテンツのタイトル</h1>
+            <div class="conImg">
+              <img src="img/img.png" alt="">
+              <p>コンテンツの中身が入る</p>
+            </div>
           </div>
-          コンテンツの中身が入る
           </section>
         </div>
 
-        <div class="contentBox" data-aos="fade-left">
+        <div class="contentBox" data-aos="zoom-in">
           <section>
             <div class="contentBoxInner">
             <h1>コンテンツのタイトル</h1>
+            <div class="conImg">
+              <img src="img/img.png" alt="">
+              <p>コンテンツの中身が入る</p>
+            </div>
           </div>
-          コンテンツの中身が入る
           </section>
         </div>
 
-        <div class="contentBox" data-aos="fade-right">
+        <div class="contentBox" data-aos="zoom-in">
           <section>
             <div class="contentBoxInner">
             <h1>コンテンツのタイトル</h1>
+            <div class="conImg">
+              <img src="img/img.png" alt="">
+              <p>コンテンツの中身が入る</p>
+            </div>
           </div>
-          コンテンツの中身が入る
           </section>
         </div>
 
       </article>
-  </div>
+
 
       <footer>
       <div class="fotternav">
@@ -76,7 +103,11 @@
         <p class="copyright">copyright all reserved</p>
       </footer>
 
-<script>AOS.init();</script>
+      <script>
+      AOS.init({
+      disable: 'mobile'
+      });
+      </script>
 
   </body>
 </html>

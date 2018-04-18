@@ -1,6 +1,7 @@
 $fontColor: #666;
 $fontSize:16px;
 $contentBoxInner_h1:beige;
+$fotterBgimgDir: "../../img/footer_background_mizutama.png";
 
 body{
   margin: 0;
@@ -19,7 +20,7 @@ body{
     color: $fontColor;
     &:hover{
       text-decoration: none;
-      color: #ccc;
+      color: red;
     }
   }
   li{
@@ -41,24 +42,31 @@ body{
 #headerOuter{
   // border: 1px solid #ccc;
   position: fixed;
+  // position: sticky;
   top: 0;
   box-shadow: 1px 1px 5px #ddd;
   width: 100%;
-  height: 80px;
+  height: 70px;
   margin: 0 auto;
-  background-color: #fff;
-  z-index: 1;
+  background-color: #000;
+  z-index: 100;
 }
 
 nav{
   ul{
     width: 500px;
     margin: 0 auto;
+    li:hover{
+      color: #ccc;
+    }
     li{
     display: table-cell;
     padding: 0 20px;
-    height: 80px;
+    height: 40px;
     vertical-align: middle;
+    color: #fff;
+    position: relative;
+    top: 20px;
     }
   }
 }
@@ -66,8 +74,8 @@ nav{
 .kyeImages{
   width: 100%;
   border: 1px solid #ccc;
-  margin-top: 80px;
-  height: 180px;
+  margin-top: 70px;
+  height: 680px;
 }
 
 .contents{
@@ -90,6 +98,14 @@ nav{
       background-color: $contentBoxInner_h1;
       border-radius: 5px 5px 0 0;
     }
+    .conImg{
+      margin: 20px 0 0 80px;
+    }
+    p{
+      padding: 0 0 0 20px;
+      display: inline-table;
+      vertical-align: top;
+    }
   }
 }
 
@@ -101,7 +117,7 @@ footer{
   text-align: center;
   .fotternav{
     // background-color: #cb4a44;
-    background: #ddd url(../../footer_background3.png) repeat fixed center top;
+    background: #ddd url($fotterBgimgDir) repeat fixed center top;
     height: 220px;
     color: #fff;
     ul{
@@ -124,8 +140,108 @@ footer{
   }
 }
 
+/*PC時ハンバーガーメニュー非表示*/
+@media screen and (min-width: 980px) {
+  #nav-drawer{
+    display: none;
+  }
+}
+/*PC時ハンバーガーメニュー非表示 end*/
 
-@media screen and (max-width: 767px) and (min-width: 0px){
+
+/*SP時のcss*/
+@media screen and (max-width: 979px) and (min-width: 0px){
+  nav{
+    display: none;
+  }
+
+  #nav-drawer {
+    position: fixed;
+  }
+
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+
+  /*アイコンのスペース*/
+  #nav-open {
+      display: inline-block;
+      width: 30px;
+      height: 22px;
+      vertical-align: middle;
+      position: relative;
+      left: 20px;
+      top: 20px;
+  }
+
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+      position: absolute;
+      height: 3px;/*線の太さ*/
+      width: 25px;/*長さ*/
+      border-radius: 3px;
+      background: #fff;
+      display: block;
+      content: '';
+      cursor: pointer;
+  }
+  #nav-open span:before {
+      bottom: -8px;
+  }
+  #nav-open span:after {
+      bottom: -16px;
+  }
+
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+      display: none;/*はじめは隠しておく*/
+      position: fixed;
+      z-index: 99;
+      top: 0;/*全体に広がるように*/
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0;
+      transition: .3s ease-in-out;
+  }
+
+  /*中身*/
+  #nav-content {
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;/*最前面に*/
+      width: 90%;/*右側に隙間を作る*/
+      max-width: 200px;/*最大幅*/
+      height: 100%;
+      background: #fff;/*背景色*/
+      transition: .3s ease-in-out;/*滑らかに表示*/
+      -webkit-transform: translateX(-105%);
+      transform: translateX(-105%);/*左に隠しておく*/
+  }
+  #nav-drawer{
+    li{
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  }
+
+
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+      display: block;/*カバーを表示*/
+      opacity: .5;
+  }
+
+  #nav-input:checked ~ #nav-content {
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);/*中身を表示*/
+      box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
   .contents{
     // border: 1px solid #ccc;
     width: 100%;
@@ -145,6 +261,19 @@ footer{
         background-color: $contentBoxInner_h1;
         border-radius: 5px 5px 0 0;
       }
+      .conImg{
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        min-width: 100px;
+        max-width: 200px;
+      }
+      p{
+        padding: 0;
+        display: inline-table;
+        vertical-align: top;
+      }
     }
   }
   footer{
@@ -155,7 +284,7 @@ footer{
     text-align: center;
     .fotternav{
       // background-color: #cb4a44;
-      background: #ddd url(../../footer_background3.png) repeat fixed center top;
+      background: #ddd url($fotterBgimgDir) repeat fixed center top;
       height: 220px;
       color: #fff;
       ul{
@@ -179,3 +308,4 @@ footer{
     }
   }
 }
+/*SP時のcss end*/
